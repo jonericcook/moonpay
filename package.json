@@ -1,0 +1,19 @@
+{
+  "name": "moonpay",
+  "version": "1.0.0",
+  "description": "MoonPay Backend Coding Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonericcook/moonpay.git"
+  },
+  "author": "Jon-Eric Cook",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonericcook/moonpay/issues"
+  },
+  "homepage": "https://github.com/jonericcook/moonpay#readme"
+}
