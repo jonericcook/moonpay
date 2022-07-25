@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  backend:
+    image: node:latest
+    volumes:
+      - ./backend:/app
+    ports:
+      - 4000:4000
+    working_dir: /app
+    command: bash -c "npm i && npm start"

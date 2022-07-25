@@ -4,16 +4,21 @@
   "description": "MoonPay Backend Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonericcook/moonpay.git"
+    "url": "https://github.com/jonericcook/moonpay.git"
   },
   "author": "Jon-Eric Cook",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jonericcook/moonpay/issues"
   },
-  "homepage": "https://github.com/jonericcook/moonpay#readme"
+  "homepage": "https://github.com/jonericcook/moonpay#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "numeral": "^2.0.6"
+  }
 }
