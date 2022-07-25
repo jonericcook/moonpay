@@ -4,7 +4,8 @@
   "description": "MoonPay Backend Coding Challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "numeral": "^2.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
