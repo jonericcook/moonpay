@@ -19,8 +19,8 @@
   "homepage": "https://github.com/jonericcook/moonpay#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "express": "^4.18.1",
-    "numeral": "^2.0.6"
+    "decimal.js": "^10.3.1",
+    "express": "^4.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
