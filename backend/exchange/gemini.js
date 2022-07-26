@@ -46,7 +46,7 @@ const findCostToBuy = (asks, buyAmount) => {
             return { ok: { usdAmount: askPrice.toNumber(), exchange: "gemini", btcAmount: amountToBuy.toNumber() } };
         }
     }
-    return { error: "not enough liquidity" }
+    return { error: "gemini does not have enough liquidity to buy " + buyAmount + " BTC" }
 }
 
 module.exports = { costToBuy }
