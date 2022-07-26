@@ -2,7 +2,7 @@
 
 ## Backend
 
-For the backend portion of the test, use the `/backend` folder. We'd like to write some code that achieves the following:
+For the backend portion of the test we'd like you to write some code that achieves the following:
 
 1. Create a JSON API (REST or GraphQL) using Node.js which will return which cryptocurrency exchange we should use to
    buy a given amount of Bitcoin to minimize the amount of USD or USDT we'll spend on this trade.
@@ -46,13 +46,13 @@ Answer the questions in the [FOLLOW-UP.md](./FOLLOW-UP.md) file.
 ## Docker
 
 The test contains a basic `docker-compose.yml` file. It uses the latest official NodeJS
-Docker image and creates two containers - one for backend and one for frontend.
+Docker image and creates a container for the backend service.
 
 The respective folder is mounted in `/app` directory inside the container.
 
 It isn't a requirement to use it, but may be convenient.
 
-NOTE: We WILL run your code inside these containers.
+NOTE: We WILL run your code inside this container.
 
 ## Submitting Your Code
 

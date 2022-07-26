@@ -29,7 +29,7 @@ app.get('/exchange-routing', (req, res) => {
         })()
     }
     else {
-        res.status(400).json({ error: "'name' expected as query parameter" });
+        res.status(400).json({ error: "'amount' expected as query parameter" });
     }
 })
 

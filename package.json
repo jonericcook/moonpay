@@ -2,7 +2,7 @@
   "name": "moonpay",
   "version": "1.0.0",
   "description": "MoonPay Backend Coding Challenge",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
