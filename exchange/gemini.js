@@ -37,16 +37,26 @@ const costToBuy = async (buyAmount) => {
     }
 }
 
+
+// asks is a list of maps
+// [
+//     {
+//     "price": "3607.86",
+//     "amount": "14.68205084",
+//     "timestamp": "1547147541"
+//     }
+// ]
 const findCostToBuy = (asks, buyAmount) => {
     const amountToBuy = new Decimal(buyAmount)
     for (const ask of asks) {
         const askPrice = new Decimal(ask.price);
         const askAmount = new Decimal(ask.amount);
         if (askAmount.greaterThanOrEqualTo(amountToBuy)) {
-            return { ok: { usdAmount: askPrice.toNumber(), exchange: "gemini", btcAmount: amountToBuy.toNumber() } };
+            const cost = askPrice.mul(amountToBuy)
+            return { ok: { usdAmount: cost.toNumber(), exchange: "gemini", btcAmount: amountToBuy.toNumber() } };
         }
     }
-    return { error: "gemini does not have enough liquidity to buy " + buyAmount + " BTC" }
+    return { error: "gemini's order book can't support buying " + buyAmount + " BTC" }
 }
 
 module.exports = { costToBuy }
