@@ -1,14 +1,13 @@
 'use strict'
 
-const express = require('express')
-const app = express()
-const port = 4000
-
 const coinbase = require('./exchange/coinbase')
 const binance = require('./exchange/binance')
 const gemini = require('./exchange/gemini')
 const util = require('./util/util')
 
+const express = require('express')
+const app = express()
+const port = 4000
 
 app.set("query parser", (queryString) => {
     return new URLSearchParams(queryString);
