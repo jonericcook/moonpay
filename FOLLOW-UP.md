@@ -8,7 +8,10 @@
 
 ### Q) What's the command to start the backend application locally?
 
-- `npm run start`
+Both of the commands below require that you are in the root directory
+
+- To run locally on your machine do `npm run start`
+- To run with docker do `docker compose up`
 
 ### Q) Any other comments we should read before evaluating your solution?
 
