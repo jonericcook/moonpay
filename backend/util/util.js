@@ -21,4 +21,25 @@ const costToBuy = (asks, buyAmount, exchange) => {
     return { error: exchange + " does not have enough liquidity to buy " + buyAmount + " BTC" }
 }
 
-module.exports = { costToBuy }
+const findCheapest = (results) => {
+    let oks = [];
+    let errors = [];
+    for (const result of results) {
+        if (result.ok) {
+            oks.push(result.ok)
+        } else if (result.error) {
+            errors.push(result.error)
+        }
+    }
+    if (oks.length == 0) {
+        return { error: errors };
+    }
+
+    return {
+        ok: oks.reduce((previous, current) => {
+            return (new Decimal(previous.usdAmount).lt(new Decimal(current.usdAmount))) ? previous : current;
+        })
+    }
+}
+
+module.exports = { costToBuy, findCheapest }

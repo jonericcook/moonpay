@@ -7,6 +7,7 @@ const port = 4000
 const coinbase = require('./exchange/coinbase')
 const binance = require('./exchange/binance')
 const gemini = require('./exchange/gemini')
+const util = require('./util/util')
 
 
 app.set("query parser", (queryString) => {
@@ -16,15 +17,16 @@ app.set("query parser", (queryString) => {
 app.get('/exchange-routing', (req, res) => {
     if (req.query.has("amount")) {
         (async () => {
-            const coinbase_cost = await gemini.costToBuy(req.query.get("amount"));
-            res.json(coinbase_cost)
-            // if (results.ok) {
-            //     res.json(results.ok);
-            // } else if (results.error) {
-            //     res.status(500).json({ error: results.error });
-            // } else {
-            //     res.status(500).json({ error: "something went wrong" });
-            // }
+            Promise.all([coinbase.costToBuy(req.query.get("amount")), binance.costToBuy(req.query.get("amount")), gemini.costToBuy(req.query.get("amount"))]).then(results => {
+                const result = util.findCheapest(results)
+                if (result.ok) {
+                    res.json(result.ok);
+                } else if (result.error) {
+                    res.status(500).json({ error: result.error });
+                } else {
+                    res.status(500).json({ error: "something went wrong" });
+                }
+            })
         })()
     }
     else {
